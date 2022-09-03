@@ -1,0 +1,132 @@
+@import 'sanitize.css/sanitize.css';
+@import "sanitize.css/assets.css";
+@import 'sanitize.css/forms.css';
+@import 'sanitize.css/typography.css';
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  overflow-x: hidden;
+  width: 100vw;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul, li {
+  list-style-type: none;
+}
+
+@font-face {
+  font-family: "IR_CulersFont";
+  src: url("../../Fonts/IRANSANSXFANUM-REGULAR.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "IR_CulersFont Med";
+  src: url("../../Fonts/IRANSANSXFANUM-MEDIUM.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "IR_CulersFont Semi";
+  src: url("../../Fonts/IRANSANSXFANUM-DEMIBOLD.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: "IR_CulersFont Bold";
+  src: url("../../Fonts/IRANSANSXFANUM-BOLD.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: "VazirFont Bold";
+  src: url("../../Fonts/VAZIR-BOLD-FD-WOL.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: "VazirFont Regular";
+  src: url("../../Fonts/VAZIR-FD-WOL.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "VazirFont Light";
+  src: url("../../Fonts/VAZIR-LIGHT-FD-WOL.woff") format("woff");
+  font-weight: auto;
+  font-style: auto;
+}
+@font-face {
+  font-family: "VazirFont Med";
+  src: url("../../Fonts/VAZIR-MEDIUM-FD-WOL.woff") format("woff");
+  font-weight: auto;
+  font-style: normal;
+}
+@font-face {
+  font-family: "VazirFont Thin";
+  src: url("../../Fonts/VAZIR-THIN-FD-WOL.woff") format("woff");
+  font-weight: auto;
+  font-style: normal;
+}
+body {
+  font-family: "VazirFont Bold", sans-serif;
+  font-size: 1.6rem;
+  font-weight: 900;
+  line-height: 1.5;
+}
+
+body {
+  direction: rtl;
+  display: grid;
+  place-content: center;
+}
+
+.extra__card {
+  padding: 2.5rem 4rem;
+  max-width: 75vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  flex-flow: column wrap;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0;
+  flex-flow: column nowrap;
+}
+
+.buttonContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  flex-flow: row nowrap;
+}
+
+.buttonContainer button {
+  border: 1px solid #191920;
+  border-radius: 1rem;
+}
+
+span {
+  font-size: 3rem;
+}
+
+/*# sourceMappingURL=App.css.map */

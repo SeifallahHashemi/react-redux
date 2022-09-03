@@ -1,0 +1,15 @@
+.button {
+  background: none;
+  border: none;
+  outline: none;
+  padding: 2rem 3rem;
+  cursor: pointer;
+  transition: all 300ms linear;
+}
+
+.button:where(:hover, :active, :target) {
+  background-color: hsl(0deg, 0%, 18%);
+  color: hsl(240deg, 3%, 93%);
+}
+
+/*# sourceMappingURL=Button.module.css.map */

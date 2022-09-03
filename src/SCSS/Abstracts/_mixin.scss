@@ -1,0 +1,11 @@
+@mixin flexBox ($flex_d: column, $justify_c: center, $align_i: center, $gap: 0, $flex_w: nowrap) {
+  display: flex;
+  justify-content: $justify_c;
+  align-items: $align_i;
+  gap: $gap;
+  flex-flow: $flex_d $flex_w;
+}
+@mixin CenteredAlign {
+  display: grid;
+  place-content: center;
+}
