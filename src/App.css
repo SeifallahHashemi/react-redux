@@ -14,6 +14,7 @@ html {
 }
 
 body {
+  direction: rtl;
   min-height: 100vh;
   overflow-x: hidden;
   width: 100vw;
@@ -25,6 +26,38 @@ a {
 
 ul, li {
   list-style-type: none;
+}
+
+.fs-xxsm {
+  font-size: 0.8rem;
+}
+
+.fs-xsm {
+  font-size: 1rem;
+}
+
+.fs-sm {
+  font-size: 1.2rem;
+}
+
+.fs-md {
+  font-size: 1.6rem;
+}
+
+.fs-lg {
+  font-size: 2rem;
+}
+
+.fs-xlg {
+  font-size: 2.4rem;
+}
+
+.fs-xxlg {
+  font-size: 3rem;
+}
+
+.fs-full {
+  font-size: 4rem;
 }
 
 @font-face {
@@ -88,45 +121,8 @@ body {
   line-height: 1.5;
 }
 
-body {
-  direction: rtl;
-  display: grid;
-  place-content: center;
-}
-
-.extra__card {
-  padding: 2.5rem 4rem;
-  max-width: 75vw;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 2rem;
-  flex-flow: column wrap;
-}
-
-header {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 0;
-  flex-flow: column nowrap;
-}
-
-.buttonContainer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 1rem;
-  flex-flow: row nowrap;
-}
-
-.buttonContainer button {
-  border: 1px solid #191920;
-  border-radius: 1rem;
-}
-
-span {
-  font-size: 3rem;
+.btn__container {
+  width: max(20vw, 3rem);
 }
 
 /*# sourceMappingURL=App.css.map */

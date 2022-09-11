@@ -1,37 +1,82 @@
 import './App.scss';
-import Card from "./UI/Card/Card";
-import Button from "./UI/Button/Button";
+import Section from "./UI/Section/Section";
+import Cart from "./components/Cart/Cart";
+import Products from "./components/Products/Products";
+import Modal from "./components/Modal/Modal";
 import {useDispatch, useSelector} from "react-redux";
-import { counterActions } from "./store/index";
+import {modalActions} from "./store/ModalSlice";
+import CartProvider from "./components/Products/CartProvider";
+import WarningText from "./UI/Warning/WarningText";
+import {useEffect} from "react";
+import Notification from "./UI/Notification/Notification";
+import {fetchCartData, sendCartData} from "./store/cart-actions";
+
+let isInitial = true;
 
 function App() {
     const dispatch = useDispatch();
-    const counter = useSelector(state => state.counter)
-    const shown = useSelector(state => state.showCounter)
-    const incrementHandler = () => {
-        dispatch(counterActions.increment())
-    }
-    const decrementHandler = () => {
-        dispatch(counterActions.decrement())
-    }
-    const increaseHandler = () => {
-        dispatch(counterActions.increase(5))
-    }
-    const toggleHandler = () => {
-        dispatch(counterActions.toggleCounter())
+    const shown = useSelector(state => state.modal.isShown);
+    const itemIndex = useSelector(state => state.cart.items);
+    const cart = useSelector(state => state.cart);
+    const notification = useSelector(state => state.modal.notification);
+    useEffect(() => {
+        dispatch(fetchCartData())
+    }, [dispatch])
+    useEffect(() => {
+        if (isInitial) {
+            isInitial = false;
+            return;
+        }
+        if (cart.changed) {
+            dispatch(sendCartData(cart));
+        }
+        /*const sendCartData = async () => {
+            dispatch(modalActions.showNotification({
+                status: 'Sending',
+                title: 'درحال ارسال ...',
+                message: 'در حال ارسال اطلاعات به سبد خرید شما'
+            }))
+            const response = await fetch('https://react-redux-ef0a3-default-rtdb.firebaseio.com/cart.json', {
+                method: 'PUT',
+                body: JSON.stringify(cart)
+            });
+            if (!response.ok) {
+                throw new Error('Send Request Failed !')
+            }
+            dispatch(modalActions.showNotification({
+                status: 'Success',
+                title: 'ارسال موفق',
+                message: 'اطلاعات با موفقیت به سرور ارسال گردید با تشکر از خرید شما'
+            }))
+        };
+        if (!isInitial) {
+            isInitial = true;
+            return;
+        }
+        sendCartData().catch(error => {
+            dispatch(modalActions.showNotification({
+                status: 'Error',
+                title: 'خطا!!!',
+                message: 'متاسفانه ارتباط با سرور برقرار نشد لطفا مجددا اقدام نمایید'
+            }))
+        })*/
+    }, [cart, dispatch])
+    const hideModalHandler = () => {
+        dispatch(modalActions.hideModal())
     }
     return (
-        <Card className="extra__card">
-                <header>
-                    {shown && <span>{counter}</span>}
-                </header>
-                <div className="buttonContainer">
-                    <Button naem="Increase by 5" type={"button"} name="افزایش 5 واحدی" onClick={increaseHandler}/>
-                    <Button naem="Increment" type={"button"} name="افزایش" onClick={incrementHandler}/>
-                    <Button naem="Decrement" type={"button"} name="کاهش" onClick={decrementHandler}/>
-                    <Button naem="toggle" type={"button"} name="تغییر وضعیت" onClick={toggleHandler}/>
-                </div>
-        </Card>
+        <Section className={"container"}>
+            {notification &&
+                <Notification title={notification.title} message={notification.message} status={notification.status}/>}
+            {shown && <Modal onConfirm={hideModalHandler}>{itemIndex.length > 0 ? <CartProvider/> :
+                <WarningText onConfirm={hideModalHandler} title={"خروج"} warning={"سبد خرید شما خالی است!"}/>}</Modal>}
+            <header>
+                <Cart/>
+            </header>
+            <div>
+                <Products/>
+            </div>
+        </Section>
     );
 }
 

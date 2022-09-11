@@ -1,0 +1,52 @@
+.fs-xxsm {
+  font-size: 0.8rem;
+}
+
+.fs-xsm {
+  font-size: 1rem;
+}
+
+.fs-sm {
+  font-size: 1.2rem;
+}
+
+.fs-md {
+  font-size: 1.6rem;
+}
+
+.fs-lg {
+  font-size: 2rem;
+}
+
+.fs-xlg {
+  font-size: 2.4rem;
+}
+
+.fs-xxlg {
+  font-size: 3rem;
+}
+
+.fs-full {
+  font-size: 4rem;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modalOverlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: fit-content;
+  padding: 2rem 4rem;
+  background-color: hsl(0deg, 99%, 98%);
+}
+
+/*# sourceMappingURL=Modal.module.css.map */

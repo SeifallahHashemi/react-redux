@@ -1,0 +1,5 @@
+@use "../../SCSS/Abstracts/index" as *;
+.product__container {
+  padding-block: 2rem;
+  @include flexBox(row, map-get($spacing, SE), center, 0);
+}

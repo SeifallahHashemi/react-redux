@@ -1,0 +1,19 @@
+@use "../../SCSS/Abstracts/index" as *;
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, .5);
+  //@include CenteredAlign;
+}
+.modalOverlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: fit-content;
+  padding: 2rem 4rem;
+  background-color: hsl(360, 99%, 98%);
+}

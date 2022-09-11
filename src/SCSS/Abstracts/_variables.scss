@@ -7,4 +7,11 @@ $fontWeight: (
         large: 600,
         Xlarge: 700,
         XXlarge: 900
+);
+$spacing: (
+        SB: space-between,
+        SA: space-around,
+        SE: space-evenly,
+        FE: flex-end,
+        FS: flex-start
 )

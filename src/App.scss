@@ -1,24 +1,9 @@
 @use "SCSS/Base/index" as *;
 @use "SCSS/Abstracts/index" as A;
-body {
-  direction: rtl;
-  @include A.CenteredAlign;
+.btn__container {
+  width: max(20vw, 3rem);
 }
-.extra__card {
-  padding: 2.5rem 4rem;
-  max-width: 75vw;
-  @include A.flexBox(column, center, center, 2rem, wrap)
-}
-header {
-  @include A.flexBox(column, center, center)
-}
-.buttonContainer {
-  @include A.flexBox(row, center, center, 1rem, nowrap);
-}
-.buttonContainer button {
-  border: 1px solid #191920;
-  border-radius: 1rem;
-}
-span {
-  font-size: 3rem;
-}
+//.product__container {
+//  padding-block: 2rem;
+//  @include A.flexBox(row, map-get(A.$spacing, SE), center, 0);
+//}

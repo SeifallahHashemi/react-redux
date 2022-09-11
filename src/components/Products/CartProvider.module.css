@@ -1,0 +1,80 @@
+.fs-xxsm {
+  font-size: 0.8rem;
+}
+
+.fs-xsm {
+  font-size: 1rem;
+}
+
+.fs-sm {
+  font-size: 1.2rem;
+}
+
+.fs-md {
+  font-size: 1.6rem;
+}
+
+.fs-lg {
+  font-size: 2rem;
+}
+
+.fs-xlg {
+  font-size: 2.4rem;
+}
+
+.fs-xxlg {
+  font-size: 3rem;
+}
+
+.fs-full {
+  font-size: 4rem;
+}
+
+.cartProviderListItem {
+  display: flex;
+  flex-flow: column;
+  gap: 3rem;
+}
+
+.buttonContainer {
+  height: fit-content;
+  padding-block-start: 2.2rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 0.5rem;
+}
+.buttonContainer__item {
+  padding: 1rem 2rem;
+  border-radius: 3rem;
+  transition: all 300ms ease-in-out;
+}
+.buttonContainer__item:not([disabled]):where(:hover, :active, :target) {
+  border: none;
+  transition: all 300ms ease-in-out;
+}
+.buttonContainer__item--payment {
+  border: none;
+  background-color: hsl(206deg, 8%, 17%);
+  color: hsl(0deg, 99%, 98%);
+}
+.buttonContainer__item--payment:not([disabled]):where(:hover, :active, :target) {
+  border: 0.1rem solid hsl(206deg, 8%, 17%);
+  background-color: hsl(0deg, 99%, 98%);
+  color: hsl(206deg, 8%, 17%);
+  transition: all 300ms ease-in-out;
+}
+.buttonContainer__item--cancel {
+  border: 0.1rem solid hsl(206deg, 8%, 17%);
+  background-color: hsl(0deg, 99%, 98%);
+  color: hsl(206deg, 8%, 17%);
+}
+.buttonContainer__item--cancel:not([disabled]):where(:hover, :active, :target) {
+  border: none;
+  background-color: hsl(206deg, 8%, 17%);
+  color: hsl(0deg, 99%, 98%);
+  transition: all 300ms ease-in-out;
+}
+
+/*# sourceMappingURL=CartProvider.module.css.map */

@@ -1,0 +1,78 @@
+.notification {
+  position: fixed;
+  top: 10%;
+  right: 10%;
+  width: max(25vw, 25rem);
+  font-size: clamp(1.4rem, 1.6vw, 1.8rem);
+  height: fit-content;
+  padding: 1rem 1.5rem 0;
+  background-color: hsl(120deg, 100%, 99%);
+  color: hsl(206deg, 8%, 17%);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  translate: 40vw;
+  transition: translate 500ms ease-in-out;
+}
+.notification.move {
+  translate: 0;
+}
+.notification.error {
+  background-color: hsl(5deg, 100%, 98%);
+  color: hsl(0deg, 50%, 50%);
+}
+.notification.success {
+  background-color: hsl(97deg, 100%, 97%);
+  color: hsl(126deg, 84%, 38%);
+}
+.notification__footer {
+  position: relative;
+  height: 0.65rem;
+  background-color: hsl(24deg, 56%, 93%);
+  scale: 1.15;
+}
+.notification__footer::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -1.5rem;
+  background-color: hsl(44deg, 80%, 57%);
+  height: 100%;
+  width: max(25vw, 25rem);
+}
+.notification__footer.empty::after {
+  animation: none;
+}
+.notification__footer.timer::after {
+  animation: widthAnimate 4000ms linear alternate both;
+}
+
+/*.animation {
+  animation: fadeIn 5100ms ease-in-out alternate both;
+}*/
+@keyframes widthAnimate {
+  0% {
+    width: max(25vw, 25rem);
+  }
+  100% {
+    width: 0;
+  }
+}
+/*
+@keyframes fadeIn {
+  0% {
+    //right: -200%;
+    translate: 40vw;
+  }
+  10%, 90% {
+    //right: 10%;
+    translate: 0;
+  }
+  100% {
+    //right: -200%;
+    translate: 40vw;
+  }
+}*/
+
+/*# sourceMappingURL=Notification.module.css.map */

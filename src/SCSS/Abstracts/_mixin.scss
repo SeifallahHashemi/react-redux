@@ -1,11 +1,36 @@
-@mixin flexBox ($flex_d: column, $justify_c: center, $align_i: center, $gap: 0, $flex_w: nowrap) {
+// Alignment
+@mixin flexBox($flex_d: column, $justify_c: center, $align_i: center, $gap: 0, $flex_w: nowrap) {
   display: flex;
   justify-content: $justify_c;
   align-items: $align_i;
   gap: $gap;
   flex-flow: $flex_d $flex_w;
 }
+
 @mixin CenteredAlign {
   display: grid;
   place-content: center;
+}
+// Hover
+@mixin hover {
+  &:not([disabled]):where(:hover, :active, :target) {
+    @content
+  }
+}
+// Sizes
+$base_size: 1rem;
+$sizes: (
+        "xxsm": $base_size * 0.8,
+        "xsm": $base_size * 1,
+        "sm": $base_size * 1.2,
+        "md": $base_size * 1.6,
+        "lg": $base_size * 2,
+        "xlg": $base_size * 2.4,
+        "xxlg": $base_size * 3,
+        "full": $base_size * 4,
+);
+@each $key,$value in $sizes {
+  .fs-#{$key} {
+    font-size: $value;
+  }
 }

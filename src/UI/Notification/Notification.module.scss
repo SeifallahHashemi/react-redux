@@ -1,0 +1,87 @@
+$Width: max(25vw, 25rem);
+.notification {
+  position: fixed;
+  top: 10%;
+  right: 10%;
+  //right: -100%;
+  width: $Width;
+  font-size: clamp(1.4rem, 1.6vw, 1.8rem);
+  height: fit-content;
+  padding: 1rem 1.5rem 0;
+  background-color: hsl(120, 100%, 99%);
+  color: hsl(206, 8%, 17%);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  translate: 40vw;
+  transition: translate 500ms ease-in-out;
+
+  &.move {
+    translate: 0;
+  }
+  //&.animation {
+  //  animation: fadeIn 5100ms ease-in-out alternate both;
+  //}
+
+  &.error {
+    background-color: hsl(5, 100%, 98%);
+    color: hsl(0, 50%, 50%);
+  }
+
+  &.success {
+    background-color: hsl(97, 100%, 97%);
+    color: hsl(126, 84%, 38%);
+  }
+
+  &__footer {
+    position: relative;
+    height: .65rem;
+    background-color: hsl(24, 56%, 93%);
+    scale: 1.15;
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -1.5rem;
+      background-color: hsl(44, 80%, 57%);
+      height: 100%;
+      width: $Width;
+    }
+    &.empty::after {
+      animation: none;
+    }
+
+    &.timer::after {
+      animation: widthAnimate 4000ms linear alternate both;
+    }
+  }
+}
+
+/*.animation {
+  animation: fadeIn 5100ms ease-in-out alternate both;
+}*/
+@keyframes widthAnimate {
+  0% {
+    width: $Width;
+  }
+  100% {
+    width: 0;
+  }
+}
+/*
+@keyframes fadeIn {
+  0% {
+    //right: -200%;
+    translate: 40vw;
+  }
+  10%, 90% {
+    //right: 10%;
+    translate: 0;
+  }
+  100% {
+    //right: -200%;
+    translate: 40vw;
+  }
+}*/

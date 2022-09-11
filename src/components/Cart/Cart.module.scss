@@ -1,0 +1,22 @@
+@use '../../SCSS/Abstracts/index' as *;
+
+.btn__container {
+  width: max(10vw, 25rem);
+  overflow: hidden;
+
+  & button {
+    width: 100%;
+  }
+
+  & .btn {
+    @include flexBox(row, space-evenly, center);
+  }
+  & * {
+    flex: 1 1 auto;
+  }
+  & span:first-of-type {
+    flex-grow: 5;
+    display: grid;
+    place-content: flex-start;
+  }
+}

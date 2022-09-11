@@ -1,0 +1,57 @@
+.fs-xxsm {
+  font-size: 0.8rem;
+}
+
+.fs-xsm {
+  font-size: 1rem;
+}
+
+.fs-sm {
+  font-size: 1.2rem;
+}
+
+.fs-md {
+  font-size: 1.6rem;
+}
+
+.fs-lg {
+  font-size: 2rem;
+}
+
+.fs-xlg {
+  font-size: 2.4rem;
+}
+
+.fs-xxlg {
+  font-size: 3rem;
+}
+
+.fs-full {
+  font-size: 4rem;
+}
+
+.warningText {
+  display: flex;
+  justify-content: stretch;
+  align-items: stretch;
+  gap: 1rem;
+  flex-flow: column nowrap;
+}
+.warningText div {
+  text-align: center;
+}
+.warningText__button {
+  padding: 0.5rem 3rem;
+  border-radius: 3rem;
+  background-color: hsl(220deg, 80%, 12%);
+  color: hsl(33deg, 89%, 69%);
+}
+.warningText__button:hover {
+  backface-visibility: hidden;
+  background-color: transparent;
+  border: 0.1rem solid hsl(220deg, 80%, 12%);
+  color: hsl(33deg, 89%, 69%);
+  transition: all 300ms linear;
+}
+
+/*# sourceMappingURL=WarningText.module.css.map */
