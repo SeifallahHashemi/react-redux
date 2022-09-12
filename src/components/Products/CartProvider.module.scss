@@ -8,7 +8,7 @@
 
 .buttonContainer {
   height: fit-content;
-  padding-block-start: 2.2rem;
+  padding-block-start: .5rem;
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
@@ -47,4 +47,14 @@
       }
     }
   }
+}
+.totalPrice {
+  height: min(6vh, 6em);
+  margin-block: 1rem .5rem;
+  padding-inline: 1rem;
+  @include A.flexBox(row, space-between, center);
+  background-color: hsl(336, 100%, 99%);
+  border: .1rem solid hsl(242, 14%, 63%);
+  border-radius: .3rem;
+  color: map-get(A.$Colors, redScheme, 'red-1');
 }

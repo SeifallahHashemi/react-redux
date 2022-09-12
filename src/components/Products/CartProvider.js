@@ -7,6 +7,7 @@ import {modalActions} from "../../store/ModalSlice";
 
 const CartProvider = () => {
     const dispatch = useDispatch();
+    const totalPrice = useSelector(state => state.cart.totalFoodPrice);
     const productItems = useSelector(state => state.cart.items);
     const paymentButtonStyles = `${classes['buttonContainer__item']} ${classes['buttonContainer__item--payment']}`;
     const cancelButtonStyles = `${classes['buttonContainer__item']} ${classes['buttonContainer__item--cancel']}`;
@@ -22,6 +23,10 @@ const CartProvider = () => {
                                  totalPrice={item.totalPrice}/>
                 ))}
             </ul>
+            <div className={classes.totalPrice}>
+                <span>ارزش کل:</span>
+                <span>{totalPrice}</span>
+            </div>
             <div className={classes.buttonContainer}>
                 <Button className={paymentButtonStyles} type={'button'} onClick={hideModalHandler}>پرداخت</Button>
                 <Button className={cancelButtonStyles} type={'button'} onClick={hideModalHandler}>انصراف</Button>

@@ -2,4 +2,14 @@ $Colors: (
         whitePrimary: hsl(0deg, 99%, 98%),
         whitePus: hsl(120, 100%, 99%),
         dark: hsl(206, 8%, 17%),
+        allWhite: (
+                'white-1': hsl(336, 100%, 99%),
+                'white-2': hsl(0, 80%, 96%),
+        ),
+        darkScheme: (
+                'dark-1': hsl(242, 14%, 63%),
+        ),
+        redScheme: (
+                'red-1': hsl(349deg 96% 62%),
+        )
 );

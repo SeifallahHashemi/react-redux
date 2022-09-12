@@ -38,7 +38,7 @@
 
 .buttonContainer {
   height: fit-content;
-  padding-block-start: 2.2rem;
+  padding-block-start: 0.5rem;
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
@@ -75,6 +75,21 @@
   background-color: hsl(206deg, 8%, 17%);
   color: hsl(0deg, 99%, 98%);
   transition: all 300ms ease-in-out;
+}
+
+.totalPrice {
+  height: min(6vh, 6em);
+  margin-block: 1rem 0.5rem;
+  padding-inline: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0;
+  flex-flow: row nowrap;
+  background-color: hsl(336deg, 100%, 99%);
+  border: 0.1rem solid hsl(242deg, 14%, 63%);
+  border-radius: 0.3rem;
+  color: hsl(349deg, 96%, 62%);
 }
 
 /*# sourceMappingURL=CartProvider.module.css.map */

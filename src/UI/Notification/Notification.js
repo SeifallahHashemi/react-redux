@@ -24,7 +24,7 @@ const Notification = props => {
         setToggleState(true);
         const timer = setTimeout(() => {
             setToggleState(false)
-        }, 4600)
+        }, 4100)
         setStateManage(statusState);
         const myFunc = () => {
             return new Promise((resolve, reject) => {
